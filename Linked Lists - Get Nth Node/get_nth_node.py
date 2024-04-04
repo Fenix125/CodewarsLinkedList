@@ -5,4 +5,7 @@ def get_nth(node, index):
     while i != index:
         node = node.next
         i += 1
-    return node 
+    if node is None:
+        raise IndexError
+    return node
+  
