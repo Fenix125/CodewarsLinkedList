@@ -1,6 +1,8 @@
 def sorted_insert(head, data):
     # Your code goes here.
     # Make sure to return the head of the list.
+    if head is None:
+        return push(None, data)
     linked_lst = []
     while head.next != None:
         linked_lst.append(head.data)
