@@ -3,9 +3,10 @@ class Node:
         self.data = data
         self.next = next
 def loop_size(node):
-    loop_list = []
+    loop_list = {}
+    counter = 0
     while node.next not in loop_list:
-            loop_list.append(node)
+            loop_list[node] = counter
             node = node.next
-    loop_list.append(node)
-    return loop_list.index(node) + 1 - loop_list.index(node.next)
+            counter += 1
+    return counter - loop_list[node.next]
