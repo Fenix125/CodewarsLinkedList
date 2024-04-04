@@ -1,19 +1,20 @@
 def sorted_insert(head, data):
     # Your code goes here.
     # Make sure to return the head of the list.
-    while True:
-        head_dt = head.data
-        head_nxt = head.next
-        if head_dt < data < head_nxt:
-            head.next = push(data, head.next)
-            new_nxt = Node(data)
-            new_nxt.next = head.nxt
-            node.next = new_nxt
-            return node
-        elif data < head_data:
-            new_head = Node(data)
-            new_head.next = head
-            return new_head
-        else:
-            head.data = head_nxt
-            head.nxt = head_nxt.next
+    linked_lst = []
+    while head.next != None:
+        linked_lst.append(head.data)
+        head = head.next
+    linked_lst += [head.data, None]
+    for ind, num in enumerate(linked_lst):
+        if data > linked_lst[-2]:
+            linked_lst.insert(-1, data)
+            break
+        if num > data:
+            linked_lst.insert(ind, data)
+            break
+    head = None
+    linked_lst.reverse()
+    for i in range(1, len(linked_lst)):
+        head = push(head, linked_lst[i])
+    return head
