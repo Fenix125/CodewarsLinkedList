@@ -5,6 +5,10 @@ class Node(object):
 def remove_duplicates(head):
     # Your code goes here.
     # Remember to return the head of the list.
+    if head == None:
+        return None
+    if head.next == None:
+        return head
     lst_nodes = []
     while head.next != None:
         lst_nodes.append(head.data)
